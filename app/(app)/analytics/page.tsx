@@ -15,8 +15,9 @@ export default function AnalyticsPage() {
       fetch(`${api}/api/analytics/expense-trends?months=6`, { headers: { Authorization: `Bearer ${token}` } }).then((r) => r.json()),
     ])
       .then(([cat, trend]) => {
-        setCatData(cat)
-        setTrendData(trend)
+        setCatData(cat.categories || [])
+        const monthly = trend.monthly_data || {}
+        setTrendData(Object.entries(monthly).map(([month, total]) => ({ month, total })))
       })
       .catch(console.error)
       .finally(() => setLoading(false))
@@ -39,7 +40,7 @@ export default function AnalyticsPage() {
               <div key={i}>
                 <div className="flex justify-between text-sm mb-1">
                   <span>{c.category}</span>
-                  <span className="font-medium">${c.total.toFixed(2)} ({c.percentage}%)</span>
+                  <span className="font-medium">RM {c.total.toFixed(2)} ({c.percentage}%)</span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-2">
                   <div className="bg-primary rounded-full h-2" style={{ width: `${c.percentage}%` }}></div>
@@ -60,7 +61,7 @@ export default function AnalyticsPage() {
                 <div key={i}>
                   <div className="flex justify-between text-sm mb-1">
                     <span>{m.month}</span>
-                    <span className="font-medium">${m.total.toFixed(2)} ({m.count} items)</span>
+                    <span className="font-medium">RM {m.total.toFixed(2)}</span>
                   </div>
                   <div className="w-full bg-gray-100 rounded-full h-3">
                     <div className="bg-green-500 rounded-full h-3" style={{ width: `${pct}%` }}></div>

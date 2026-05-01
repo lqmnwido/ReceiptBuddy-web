@@ -58,7 +58,7 @@ export default function InventoryPage() {
                 <td className="p-3 text-sm">{item.category || "-"}</td>
                 <td className={`p-3 text-sm text-right font-medium ${item.needs_reorder ? "text-red-600" : ""}`}>{item.quantity}</td>
                 <td className="p-3 text-sm text-right">{item.min_stock}</td>
-                <td className="p-3 text-sm text-right">{item.unit_price ? `$${item.unit_price.toFixed(2)}` : "-"}</td>
+                <td className="p-3 text-sm text-right">{item.unit_price ? `RM ${item.unit_price.toFixed(2)}` : "-"}</td>
                 <td className="p-3 text-sm">{item.supplier || "-"}</td>
               </tr>
             ))}

@@ -45,7 +45,7 @@ export default function EmployeesListPage() {
                   <td className="p-3 text-sm text-gray-600">{e.email}</td>
                   <td className="p-3 text-sm">{e.role || "-"}</td>
                   <td className="p-3 text-sm">{e.department || "-"}</td>
-                  <td className="p-3 text-sm text-right">${e.hourly_rate?.toFixed(2) || "0.00"}</td>
+                  <td className="p-3 text-sm text-right">RM {e.hourly_rate?.toFixed(2) || "0.00"}</td>
                 </tr>
               ))}
             </tbody>

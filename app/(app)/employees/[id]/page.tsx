@@ -31,7 +31,7 @@ export default function EmployeeDetailPage() {
         <div className="grid grid-cols-2 gap-4">
           <div><p className="text-sm text-gray-500">Role</p><p className="font-medium">{employee.role || "-"}</p></div>
           <div><p className="text-sm text-gray-500">Department</p><p className="font-medium">{employee.department || "-"}</p></div>
-          <div><p className="text-sm text-gray-500">Hourly Rate</p><p className="font-medium">${employee.hourly_rate?.toFixed(2) || "0.00"}</p></div>
+          <div><p className="text-sm text-gray-500">Hourly Rate</p><p className="font-medium">RM {employee.hourly_rate?.toFixed(2) || "0.00"}</p></div>
           <div><p className="text-sm text-gray-500">Phone</p><p className="font-medium">{employee.phone || "-"}</p></div>
           <div><p className="text-sm text-gray-500">Max Hours/Week</p><p className="font-medium">{employee.max_hours_per_week || "-"}</p></div>
           <div><p className="text-sm text-gray-500">Status</p><p className="font-medium">{employee.is_active ? "Active" : "Inactive"}</p></div>

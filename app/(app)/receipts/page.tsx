@@ -79,7 +79,7 @@ export default function ReceiptsPage() {
               )}
               <div className="space-y-1">
                 <p className="font-semibold truncate">{r.vendor || "Unknown Vendor"}</p>
-                <p className="text-lg font-bold text-primary">${r.total?.toFixed(2) || "0.00"}</p>
+                <p className="text-lg font-bold text-primary">RM {r.total?.toFixed(2) || "0.00"}</p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
                   <span>{r.date || "No date"}</span>
                   {r.category && <span className="bg-gray-100 px-2 py-0.5 rounded-full text-xs">{r.category}</span>}

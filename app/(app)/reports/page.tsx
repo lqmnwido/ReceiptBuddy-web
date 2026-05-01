@@ -43,11 +43,11 @@ export default function ReportsPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
               <p className="text-sm text-gray-500">Total Expenses</p>
-              <p className="text-xl font-bold text-primary">${summary.total_expenses.toFixed(2)}</p>
+              <p className="text-xl font-bold text-primary">RM {summary.total_expenses.toFixed(2)}</p>
             </div>
             <div>
               <p className="text-sm text-gray-500">Payroll Cost</p>
-              <p className="text-xl font-bold text-green-600">${summary.payroll_cost.toFixed(2)}</p>
+              <p className="text-xl font-bold text-green-600">RM {summary.payroll_cost.toFixed(2)}</p>
             </div>
             <div>
               <p className="text-sm text-gray-500">Hours Worked</p>

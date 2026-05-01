@@ -38,7 +38,7 @@ export default function InvoicesPage() {
                 <tr key={inv.id} className="border-b last:border-0 hover:bg-gray-50">
                   <td className="p-3 font-medium">{inv.invoice_number}</td>
                   <td className="p-3 text-sm">{inv.client_name}</td>
-                  <td className="p-3 text-sm text-right font-medium">${inv.total?.toFixed(2) || "0.00"}</td>
+                  <td className="p-3 text-sm text-right font-medium">RM {inv.total?.toFixed(2) || "0.00"}</td>
                   <td className="p-3">
                     <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                       inv.status === "paid" ? "bg-green-100 text-green-700" :

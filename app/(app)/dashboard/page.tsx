@@ -26,8 +26,8 @@ export default function DashboardPage() {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         {[
-          { label: "Total Expenses", value: `$${kpis?.total_expenses?.toLocaleString() || "0"}`, href: "/expenses", color: "bg-blue-50 text-blue-700" },
-          { label: "Payroll Cost", value: `$${kpis?.total_payroll?.toLocaleString() || "0"}`, href: "/reports", color: "bg-green-50 text-green-700" },
+          { label: "Total Expenses", value: `RM ${kpis?.total_expenses?.toLocaleString() || "0"}`, href: "/expenses", color: "bg-blue-50 text-blue-700" },
+          { label: "Payroll Cost", value: `RM ${kpis?.total_payroll?.toLocaleString() || "0"}`, href: "/reports", color: "bg-green-50 text-green-700" },
           { label: "Attendance Rate", value: `${kpis?.avg_attendance_rate || "0"}%`, href: "/attendance", color: "bg-purple-50 text-purple-700" },
           { label: "Pending Leave", value: `${kpis?.pending_leave_requests || "0"}`, href: "/leave/requests", color: "bg-amber-50 text-amber-700" },
         ].map((card, i) => (
