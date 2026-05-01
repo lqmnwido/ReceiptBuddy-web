@@ -1,4 +1,17 @@
 import Link from "next/link"
+import {
+  Camera, Wallet, BarChart3, Calendar,
+  ClipboardCheck, Bot,
+} from "lucide-react"
+
+const features = [
+  { title: "Receipt Scanner", desc: "Snap a photo, AI extracts vendor, total, date & items automatically", Icon: Camera },
+  { title: "Expense Tracking", desc: "Categorize, tag, and track every business expense effortlessly", Icon: Wallet },
+  { title: "AI Analytics", desc: "Beautiful charts, spending trends, and AI-generated business insights", Icon: BarChart3 },
+  { title: "Smart Scheduling", desc: "AI generates optimal shift schedules based on availability & demand", Icon: Calendar },
+  { title: "Attendance & Leave", desc: "Clock in/out with GPS, manage leave requests with AI approval suggestions", Icon: ClipboardCheck },
+  { title: "AI Business Chat", desc: "Ask questions about your business data in plain English", Icon: Bot },
+]
 
 export default function LandingPage() {
   return (
@@ -37,16 +50,11 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Everything You Need</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "📸 Receipt Scanner", desc: "Snap a photo, AI extracts vendor, total, date & items automatically" },
-              { title: "💰 Expense Tracking", desc: "Categorize, tag, and track every business expense effortlessly" },
-              { title: "📊 AI Analytics", desc: "Beautiful charts, spending trends, and AI-generated business insights" },
-              { title: "📅 Smart Scheduling", desc: "AI generates optimal shift schedules based on availability & demand" },
-              { title: "✅ Attendance & Leave", desc: "Clock in/out with GPS, manage leave requests with AI approval suggestions" },
-              { title: "🤖 AI Business Chat", desc: "Ask questions about your business data in plain English" },
-            ].map((f, i) => (
+            {features.map((f, i) => (
               <div key={i} className="border rounded-xl p-6 hover:shadow-lg transition">
-                <div className="text-3xl mb-3">{f.title.split(" ")[0]}</div>
+                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4">
+                  <f.Icon size={28} className="text-primary" />
+                </div>
                 <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
                 <p className="text-gray-600">{f.desc}</p>
               </div>

@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import { CheckCircle2, Hourglass, AlarmClock } from "lucide-react"
 
 export default function AttendancePage() {
   const [status, setStatus] = useState<any>(null)
@@ -55,7 +56,14 @@ export default function AttendancePage() {
 
       {/* Clock In/Out */}
       <div className="bg-white rounded-xl border p-6 mb-6 text-center">
-        <p className="text-4xl mb-2">{status?.clock_in ? (status?.clock_out ? "✅" : "⏳") : "⏰"}</p>
+        <div className="flex justify-center mb-2">
+          {status?.clock_in
+            ? (status?.clock_out
+              ? <CheckCircle2 size={40} className="text-green-500" />
+              : <Hourglass size={40} className="text-amber-500" />)
+            : <AlarmClock size={40} className="text-gray-400" />
+          }
+        </div>
         <p className="text-lg mb-4">
           {status?.clock_in
             ? (status?.clock_out ? `Clocked out - ${status.hours_worked}h worked` : "Currently clocked in")

@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import { Wallet, ClipboardCheck, Package } from "lucide-react"
 
 export default function ReportsPage() {
   const [summary, setSummary] = useState<any>(null)
@@ -64,13 +65,13 @@ export default function ReportsPage() {
       {/* Download Buttons */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
-          { type: "expenses", label: "Expenses Report", icon: "💰" },
-          { type: "attendance", label: "Attendance Report", icon: "✅" },
-          { type: "inventory", label: "Inventory Report", icon: "📦" },
+          { type: "expenses", label: "Expenses Report", Icon: Wallet },
+          { type: "attendance", label: "Attendance Report", Icon: ClipboardCheck },
+          { type: "inventory", label: "Inventory Report", Icon: Package },
         ].map((r) => (
           <button key={r.type} onClick={() => downloadReport(r.type)}
             className="bg-white border rounded-xl p-6 text-left hover:shadow-md transition flex items-center gap-3">
-            <span className="text-2xl">{r.icon}</span>
+            <r.Icon size={28} className="text-primary" />
             <div>
               <p className="font-semibold">{r.label}</p>
               <p className="text-sm text-gray-500">Download CSV</p>

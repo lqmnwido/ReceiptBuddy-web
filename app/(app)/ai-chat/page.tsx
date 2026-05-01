@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import { Bot } from "lucide-react"
 
 export default function AIChatPage() {
   const [query, setQuery] = useState("")
@@ -38,7 +39,7 @@ export default function AIChatPage() {
       <div className="flex-1 overflow-y-auto space-y-4 mb-4">
         {messages.length === 0 && (
           <div className="text-center py-12 text-gray-400">
-            <p className="text-4xl mb-2">🤖</p>
+            <Bot size={48} className="mx-auto mb-2 text-gray-300" />
             <p>Ask me anything about your business</p>
             <p className="text-sm">e.g., "How much did we spend this month?" or "Who's on leave next week?"</p>
           </div>
